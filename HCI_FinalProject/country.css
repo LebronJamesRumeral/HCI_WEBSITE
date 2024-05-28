@@ -1,0 +1,404 @@
+:root{
+    --white-color: #fff;
+    --dark-color: #222;
+    --body-bg-color: #fff;
+    --navigation-item-hover-color: #3b5378;
+
+    --text-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    --box-shadow: 0 5px 25px rgba(0 0 0 / 20%);
+
+    --scroll-bar-color: #fff;
+    --scroll-thumb-color: #282f4e;
+    --scroll-thumb-hover-color: #454f6b;
+}
+::-webkit-scrollbar-thumb{
+    width: 100%;
+    background: var(--scroll-thumb-color);
+    border-radius: 2em;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: var(--scroll-thumb-hover-color);
+}
+@media screen and (min-width: 1100px){
+    header .nav-bar{
+        padding: 0 50px;
+    }
+    .section{
+        padding: 25px 50px;
+    }
+    .media-icons{
+        right: 0;
+        margin-right: 50px;
+    }
+    .swiper-slide .text-content{
+        margin: 0 120px 0 50px;
+    }
+    .bg-slider-thumbs{
+        bottom: 3em;
+    }
+}
+@media screen and (max-width: 785px){
+    header .nav-bar{
+        padding: 25px 20px;
+    }
+    .section{
+        padding: 25px 20px;
+    }
+    .media-icons{
+        margin-right: 20px;
+    }
+    .media-icons a{
+        font-size: 1.5em;
+    }
+    .swiper-slide .text-content{
+        margin: 0 70px 0 20px;
+    }
+    .swiper-slide .text-content .title{
+        font-size: 3em;
+    }
+}
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+}
+html{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+html::-webkit-scrollbar{
+    width: .8rem;
+}
+body{
+    height: 100vh;
+    background-size: cover;
+    background-position: position;
+    background: var(--body-bg-color);
+}
+section{
+    position: relative;
+}
+.section{
+    color: var(--white-color);
+    background: #f7f7f7;
+    padding: 35px 200px;
+    transition: 0.3s ease;
+}
+header{
+    width: 100%;
+    height: 75px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 30px 10%;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    transition: 0.5s ease;
+    transition-property: height, background;
+    background: #2b4c70;
+}
+header.sticky{
+    height: calc(2.5em + 1rem);
+    background: #2b4c70;
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid #2b4c70;
+}
+.logo{
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+}
+nav li{
+    display: inline-block;
+    list-style: none;
+    padding: 0px 20px;
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: white;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+nav ul li a:hover::after{
+    width: 100%;
+}
+a,button{
+    font-size: 16px;
+    font-weight: 500;
+    color: #2b4c70;
+    text-decoration: none;
+    cursor: pointer;
+}
+button{
+    border-radius: 50px;
+    padding: 9px 25px;
+    border: none;
+}
+.menu-button{
+    display: none;
+}
+.hamburger{
+    display: none;
+    cursor: pointer;
+}
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+}
+@media (max-width: 1040px) {
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 60px;
+        flex-direction: column;
+        background-color: #2b4c70;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 16px 0;
+    }
+
+    .nav-item a {
+        color: white;
+        display: block;
+    }
+}
+
+@media (max-width: 1290px) {
+    header ul li a {
+        font-size: 15px;
+    }
+    .logo p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 1040px) {
+    header ul li a {
+        display: none;
+    }
+    .logo p {
+        display: none;
+    }
+    .dropbtn {
+        display: none;
+    }
+}
+
+@media (max-width: 1240px) {
+    header ul li a {
+        font-size: 13px;
+    }
+}
+@media(max-width: 800px){
+    .hideOnMobile{
+        display: none;
+    }
+    .menu-button{
+        display: block;
+    }
+}
+
+.about-section-hongkong{
+    background: url(Images/HONGKONG-landscape.jpg) no-repeat right;
+    background-size: 70%;
+    background-color: white;
+    overflow: hidden;
+    padding: 30px 0;
+}
+.inner-container{
+    width: 55%;
+    float: left;
+    background-color: white;
+    padding: 150px;
+}
+.inner-container h1{
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 900;
+}
+.text{
+    font-size: 13px;
+    color: #545454;
+    line-height: 30px;
+    text-align: justify;
+    margin-bottom: 40px;
+}
+
+.about-section2-hongkong{
+    background: url(Images/2560x1440\ Resolution\ Hong\ Kong\ Skyscrapers\ 1440P\ Resolution\ Wallpaper\ -\ Wallpapers\ Den.jpg) no-repeat left;
+    background-size: 70%;
+    background-color: white;
+    overflow: hidden;
+    padding: 30px 0;
+}
+.inner-container2{
+    width: 55%;
+    float: right;
+    background-color: white;
+    padding: 150px;
+}
+.inner-container h1{
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 900;
+}
+.text{
+    font-size: 20px;
+    color: #545454;
+    line-height: 30px;
+    text-align: justify;
+    margin-bottom: 40px;
+}
+
+.about-section-singapore{
+    background: url(Images/Singapore_\ A\ Mesmerizing\ Blend\ of\ Tradition\ and\ Modernity.jpg) no-repeat right;
+    background-size: 85%;
+    background-color: white;
+    overflow: hidden;
+    padding: 30px 0;
+}
+.inner-container{
+    width: 55%;
+    float: left;
+    background-color: white;
+    padding: 150px;
+}
+.inner-container h1{
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 900;
+}
+.text{
+    font-size: 20px;
+    color: #545454;
+    line-height: 30px;
+    text-align: justify;
+    margin-bottom: 40px;
+}
+
+.about-section2-singapore{
+    background: url(Images/Singapore\ Facts_\ Know\ Before\ You\ Go\ -\ Eatlivetraveldrink.jpg) no-repeat left;
+    background-size: 70%;
+    background-color: white;
+    overflow: hidden;
+    padding: 30px 0;
+}
+.inner-container2{
+    width: 55%;
+    float: right;
+    background-color: white;
+    padding: 150px;
+}
+.inner-container h1{
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 900;
+}
+.text{
+    font-size: 13px;
+    color: #545454;
+    line-height: 30px;
+    text-align: justify;
+    margin-bottom: 40px;
+}
+
+.about-section-japan{
+    background: url(Images/Tokyo\ skyline.jpg) no-repeat right;
+    background-size: 70%;
+    background-color: white;
+    overflow: hidden;
+    padding: 30px 0;
+}
+.inner-container{
+    width: 55%;
+    float: left;
+    background-color: white;
+    padding: 150px;
+}
+.inner-container h1{
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 900;
+}
+.text{
+    font-size: 13px;
+    color: #545454;
+    line-height: 30px;
+    text-align: justify;
+    margin-bottom: 40px;
+}
+
+.about-section2-japan{
+    background: url(Images/japan\ history.jpg) no-repeat left;
+    background-size: 55%;
+    background-color: white;
+    overflow: hidden;
+    padding: 30px 0;
+}
+.inner-container2{
+    width: 55%;
+    float: right;
+    background-color: white;
+    padding: 150px;
+}
+.inner-container h1{
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 900;
+}
+.text{
+    font-size: 13px;
+    color: #545454;
+    line-height: 30px;
+    text-align: justify;
+    margin-bottom: 40px;
+}

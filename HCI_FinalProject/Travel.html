@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAVEL INFO</title>
+    <link rel="stylesheet" href="travel.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <p>ANYWHERE YOU GO</p>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="Home.html">Home</a></li>
+                <li class="nav-item"><a href="Travel.html">Travel Info</a></li>
+                <li class="nav-item"><a href="Explore.html">Explore</a></li>
+                <li class="nav-item"><a href="About.html">About</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav> 
+        <button class="dropbtn"><a href="Login.html">Log In</a></button>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-text">
+            <h1>Travel<br>Informations</h1>
+            <p>LOTS OF CONVENIENT AND COMFORTABLE FLIGHTS AWAITS YOU,
+            FROM DIFFERENT DESTINATIONS AND VARIETY OF LOCATION, ANYWHERE YOU GO PROVIDES MULTIPLE TRAVEL
+            INFORMATIONS ABOUT DESTINATIONS
+            </p>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="text">
+            <h2>Informations <br> for Your Flight</h2>
+        </div>
+        <div class="row-items">
+            <div class="container-box">
+                <div class="container-img">
+                    <img src="Images/travel-luggage.png" alt="">
+                </div>
+                <h4>Baggage Informations</h4>
+                <p>At Anywhere You Go, we understand that traveling with luggage can be an important aspect of your journey.
+                That's why we strive to provide you with clear and concise baggage information to ensure a smooth and hassle-free 
+                travel experience. 
+                </p>
+            </div>
+
+            <div class="container-box">
+                <div class="container-img">
+                    <img src="Images/payment-method.png" alt="">
+                </div>
+                <h4>Payment Options</h4>
+                <p>As a travel agency, we understand the importance of providing flexible and convenient payment
+                options to our valued clients. That's why we offer a variety of payment methods to accommodate your 
+                preferences and ensure a seamless booking experience.
+                </p>
+            </div>
+
+            <div class="container-box">
+                <div class="container-img">
+                    <img src="Images/destination.png" alt="">
+                </div>
+                <h4>Travel <br> Advisories</h4>
+                <p>As a responsible travel agency, we prioritize the safety and well-being of our clients above all else. 
+                To ensure that you have a safe and enjoyable travel experience, we provide up-to-date travel advisories 
+                and guidance on potential risks and hazards that may affect your destination.
+                </p>
+            </div>
+
+            <div class="container-box">
+                <div class="container-img">
+                    <img src="Images/passport.png" alt="">
+                </div>
+                <h4>Travel Documents</h4>
+                <p>As a reputable travel agency, we understand the importance of ensuring that our clients have all the 
+                necessary travel documents for a smooth and hassle-free journey.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="flight-container">
+        <div class="flight-image-container">
+            <div class="flight-content">
+                <h1>Frequently <br>Asked Questions</h1>
+                <p>Quick Answers to <br>Your Booking Inquiries</p>
+            </div>
+            <div class="content">
+                <p>What happens if there is an emergency during my trip?</p>
+                <button class="help-btn"><a href="#">Help Center</a></button>
+            </div>
+    </section>
+
+    <footer class="footer">
+        <div class="section-container footer-container">
+            <div class="footer-col">
+                <h3>HCI COMPANY</h3>
+                <p>
+                    Anywhere You Go is dedicated to providing exceptional travel experiences with a focus on 
+                    comfort, safety, and convenience. With a fleet of modern aircraft and a network of destinations 
+                    spanning the globe.
+                </p>
+                <p>
+                    Our commitment to customer satisfaction is reflected in our top-tier service, competitive pricing, 
+                    and comprehensive travel solutions. Whether you're flying for business or leisure, Anywhere You Go
+                    ensures a seamless and enjoyable journey from takeoff to landing.
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <p>About Us</p>
+                <p>Our Team</p>
+                <p>Blog</p>
+                <p>Book</p>
+                <p>Contact Us</p>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <p>FAQs</p>
+                <p>Terms & Condition</p>
+                <p>Privacy Policy</p>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <p>Social Media</p>
+                <p>Help Center</p>
+                <p>Partnerships</p>
+            </div>
+        </div>
+        <div class="footer-bar">
+            Copyright 2024 Web Design HCI. All Rights Reserved.
+        </div>
+    </footer>
+    
+    <script>
+        window.addEventListener("scroll", function(){
+        const header = document.querySelector('header');
+        header.classList.toggle("sticky", window.scrollY >0);
+        });
+
+        const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+    updateNavLinkColors();
+});
+
+document.querySelectorAll(".nav-item").forEach(n => n.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+    updateNavLinkColors();
+}));
+
+function updateNavLinkColors() {
+    document.querySelectorAll(".nav-item a").forEach(a => {
+        a.style.color = navMenu.classList.contains("active") ? "white" : "#2b4c70";
+    });
+}
+    </script>
+
+</body>
+</html>

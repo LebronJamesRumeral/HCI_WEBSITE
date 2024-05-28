@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+</head>
+<body class="login">
+    <header class="sticky">
+        <div class="logo">
+            <p>ANYWHERE YOU GO</p>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="Home.html">Home</a></li>
+                <li class="nav-item"><a href="Travel.html">Travel Info</a></li>
+                <li class="nav-item"><a href="Explore.html">Explore</a></li>
+                <li class="nav-item"><a href="About.html">About</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav> 
+        <button class="dropbtn"><a href="Login.html">Log In</a></button>
+    </header>
+
+    <div class="container">
+        <div class="content-login">
+            <div class="text-sci">
+                <h2>Welcome!<br><span>Have A Safe Flight With Us</span></h2>
+                <p>At Anywhere To Go, we believe in responsible and sustainable travel. 
+                    We work closely with local communities and businesses to ensure that 
+                    our travels have a positive impact on the destinations we visit. By choosing us, 
+                    you're not just embarking on a journey; you're contributing to the preservation 
+                    of our planet and the enrichment of local cultures.
+                </p>
+            </div>
+            <div class="logreg-box">
+                <div class="form-box login">
+                    <form action="#">
+                        <h2>Sign In</h2>
+                    <div class="input-box">
+                        <span class="icon"><i class="uil uil-envelope"></i></span>
+                        <input type="email" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class="uil uil-lock"></i></span>
+                        <input type="password" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="remember-forgot">
+                        <label><input type="checkbox">Remember Me</label>
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="dropbtn-btn">Sign In</button>
+                    <div class="login-register">
+                        <p>Don't have an account? <a href="#" class="register-link">Sign Up</a></p>
+                    </div>
+                    </form>
+                </div>
+
+                <div class="form-box register">
+                    <form action="#">
+                        <h2>Sign Up</h2>
+                    <div class="input-box">
+                        <span class="icon"><i class="uil uil-user"></i></span>
+                        <input type="text" required>
+                        <label>Name</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class="uil uil-envelope"></i></span>
+                        <input type="email" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class="uil uil-lock"></i></span>
+                        <input type="password" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="remember-forgot">
+                        <label><input type="checkbox">I agree to the terms & condition</label>
+                    </div>
+                    <button type="submit" class="dropbtn-btn">Sign Up</button>
+                    <div class="login-register">
+                        <p>Already have an account? <a href="#" class="login-link">Sign In</a></p>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const logregBox = document.querySelector('.logreg-box');
+        const loginLink = document.querySelector('.login-link');
+        const registerLink = document.querySelector('.register-link');
+
+        const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+    updateNavLinkColors();
+});
+
+document.querySelectorAll(".nav-item").forEach(n => n.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+    updateNavLinkColors();
+}));
+
+function updateNavLinkColors() {
+    document.querySelectorAll(".nav-item a").forEach(a => {
+        a.style.color = navMenu.classList.contains("active") ? "white" : "#2b4c70";
+    });
+}
+    </script>
+
+</body>
+</html>

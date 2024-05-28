@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hongkong</title>
+    <link rel="stylesheet" href="swiper-bundle.min.css">
+    <link rel="stylesheet" href="country.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <p>ANYWHERE YOU GO</p>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="Home.html">Home</a></li>
+                <li class="nav-item"><a href="Travel.html">Travel Info</a></li>
+                <li class="nav-item"><a href="Explore.html">Explore</a></li>
+                <li class="nav-item"><a href="About.html">About</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav> 
+        <button class="dropbtn"><a href="Login.html">Log In</a></button>
+    </header>
+
+    <section class="about-section-singapore">
+        <div class="inner-container">
+            <h1>About Singapore</h1>
+            <p class="text">
+                Singapore is a sunny, tropical island in South-east Asia, off the
+            southern tip of the Malay Peninsula. The city-state is 710 square
+            kilometres and inhabited by five million people from four major
+            communities; Chinese (majority), Malay, Indian and Eurasian. It
+            consists of the diamond-shaped Singapore Island and some 60 small
+            islets; the main island occupies all but about 18 square miles of
+            this combined area. The main island is separated from Peninsular
+            Malaysia to the north by Johor Strait, a narrow channel crossed by a
+            road and rail causeway that is more than half a mile long. The
+            southern limits of the state run through Singapore Strait, where
+            outliers of the Riau-Lingga Archipelago—which forms a part of
+            Indonesia—extend to within 10 miles of the main island. Ideally
+            positioned in South-east Asia, where the rest of the region is just
+            a hop, skip and jump away, Singapore is a thriving metropolis
+            offering a world-class infrastructure, a fully integrated
+            island-wide transport network, dynamic business environment, vibrant
+            living spaces and a rich culture largely influenced by the four
+            major communities in Singapore with each offering different
+            perspective of life in Singapore in terms of culture, religion,
+            food, language and history.
+            </p>
+        </div>
+    </section>
+
+    <section class="about-section2-singapore">
+        <div class="inner-container2">
+            <h1>Quick History</h1>
+            <p class="text">
+                Modern Singapore was founded in the 19th century, thanks to politics,
+                trade and a man known as Sir Thomas Stamford Raffles. During this time,
+                the British empire was eyeing a port of call in this region to base its merchant fleet, 
+                and to forestall any advance made by the Dutch.
+            </p>
+        </div>
+    </section>
+    <script>
+    window.addEventListener("scroll", function(){
+        const header = document.querySelector('header');
+        header.classList.toggle("sticky", window.scrollY >0);
+    });
+    
+    const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+    updateNavLinkColors();
+});
+
+document.querySelectorAll(".nav-item").forEach(n => n.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+    updateNavLinkColors();
+}));
+
+function updateNavLinkColors() {
+    document.querySelectorAll(".nav-item a").forEach(a => {
+        a.style.color = navMenu.classList.contains("active") ? "white" : "#2b4c70";
+    });
+}</script>
+</body>
+</html>
